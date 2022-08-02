@@ -54,11 +54,11 @@ DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyyHH:mm:ss");
 //            PreparedStatement pstmt = con.prepareStatement(query);
 //      pstmt.setInt(1, i);
           test tt = new test();
-          out.print(tt.getDataType(2147483647));
-//      ResultSet rs = tt.getRSFromPSMT("select EXPORT_DECL_NO from OPS$EXP.SB_ADEP_READY WHERE SB_NO = ? and STATUS = ?",5891841,"F");      //pstmt.executeQuery();
-//      while(rs.next()) {
-//         out.print("Name: "+rs.getString(1)+", ");
-//      }
+          //out.print(tt.getDataType(2147483647));
+      ResultSet rs = tt.getRSFromPSMT("select b.ccom_cd,zone_name,sum(decode(q_id,'RMS',1,0)) RMS, sum(decode(q_id,'APR',1,0)) APR_GRP,sum(decode(q_id,'ACL',1,0)) DC_GRP, sum(decode(q_id,'IMP',1,0)) IMPORTER,sum(decode(q_id,null,1,0)) Duty_Pay , sum(decode(q_id,'AAI',1,0)) Goods_Regn,sum(decode(q_id,'INS',1,0)) Examiner, sum(decode(q_id,'SUP',1,0)) APR_SHED,sum(decode(q_id,'RMS',1,0))+sum(decode(q_id,'APR',1,0))+sum(decode(q_id,'ACL',1,0))+sum(decode(q_id,'IMP',1,0))+sum(decode(q_id,null,1,0))+sum(decode(q_id,'AAI',1,0))+sum(decode(q_id,'INS',1,0))+sum(decode(q_id,'SUP',1,0)) TOTAL from ops$imports.be_q a INNER JOIN ops$imports.v_zone_cc_comm_site b ON a.cus_site=b.cus_site WHERE be_dt between to_date(?,'DD-MON-YY') and to_date(?,'DD-MON-YY') group by b.ccom_cd,zone_name order by zone_name","01-AUG-20","02-AUG-22");      //pstmt.executeQuery();
+      while(rs.next()) {
+         out.print("Name: "+rs.getString(1)+", ");
+      }
 //      int min = 0;
 //      int max = 1;
 //      for (int i = 0; i < 1; i++) {
