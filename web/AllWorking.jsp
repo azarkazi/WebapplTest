@@ -146,6 +146,8 @@
 //out.println(dtf.format(plus_DT));
 //out.println(dtf.format(Current_DT));
 //out.println(dtf.format(minus_DT));
+out.print("Test For Git.");
+out.print("Test For Git.");
         %>
         <input type="text" name="be_dt_s" value="" placeholder="25-JUL-2022" size="10" id="fld2" style="font-weight:700;font-size: large;" maxlength=10  onkeyup="this.value=this.value.replace(/^(\d\d)(\d)$/g,'$1/$2').replace(/^(\d\d\/\d\d)(\d+)$/g,'$1/$2').replace(/[^\d\/]/g,'')"/>
     </body>
